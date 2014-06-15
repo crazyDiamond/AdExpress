@@ -50,6 +50,5 @@ e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdEx
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress\bin\Microsoft.Owin.Security.Google.xml
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress\bin\Microsoft.Owin.Security.Twitter.xml
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress\obj\Debug\AdExpress.csprojResolveAssemblyReference.cache
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress\obj\Debug\AdExpress.dll
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress\obj\Debug\AdExpress.pdb
