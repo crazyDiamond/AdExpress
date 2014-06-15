@@ -11,6 +11,6 @@ namespace AdExpress.Models
     }
     public class AdDBContext : DbContext
     {
-        public DbSet<Ad> Ads { get; set; }
+        public virtual DbSet<Ad> Ads { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -13,7 +14,8 @@ namespace AdExpress.Controllers
         // GET: /Ads/
         public ActionResult Index()
         {
-            return View(db.Ads.ToList());
+            List<Ad> model = db.Ads.ToList();
+            return View(model);
         }
 
         // GET: /Ads/Details/5
