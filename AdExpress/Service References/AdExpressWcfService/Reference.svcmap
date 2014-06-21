@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d7713576-63f8-4eb9-8e22-682dafe5c116" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:37510/AdExpressWcfService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdExpressWcfService.xsd" MetadataType="Schema" ID="56b7ce9f-28e8-4968-8a8a-2b0da2437759" SourceId="1" SourceUrl="http://localhost:37510/AdExpressWcfService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AddExpressWcfService.wsdl" MetadataType="Wsdl" ID="67559124-d0f1-4522-ae54-e55ccfc22ca0" SourceId="1" SourceUrl="http://localhost:37510/AdExpressWcfService.svc?wsdl" />
+    <MetadataFile FileName="AdExpressWcfService1.xsd" MetadataType="Schema" ID="02d9cba2-6bd9-4d7d-a5ff-17fd0fa2753c" SourceId="1" SourceUrl="http://localhost:37510/AdExpressWcfService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AdExpressWcfService.disco" MetadataType="Disco" ID="913e2c43-94ce-4d5c-be97-5b9b37c494ae" SourceId="1" SourceUrl="http://localhost:37510/AdExpressWcfService.svc?disco" />
+    <MetadataFile FileName="AdExpressWcfService2.xsd" MetadataType="Schema" ID="f30e2055-d106-428a-a785-9f1f44ed4a87" SourceId="1" SourceUrl="http://localhost:37510/AdExpressWcfService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

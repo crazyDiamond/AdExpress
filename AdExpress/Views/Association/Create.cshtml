@@ -1,0 +1,63 @@
+﻿@using AdExpress.Helpers
+@model AdExpress.Models.AssociationViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AssociationViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StarDateTime, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StarDateTime)
+                @Html.ValidationMessageFor(model => model.StarDateTime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EndDateTime, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EndDateTime)
+                @Html.ValidationMessageFor(model => model.EndDateTime)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model=>model.AdTitle, new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.AdId, Dropdownhelper.GetAllAds(), new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.AdTitle)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewspaperName, new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.NewspaperId, Dropdownhelper.GetAllNewspapers(), new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.NewspaperName)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

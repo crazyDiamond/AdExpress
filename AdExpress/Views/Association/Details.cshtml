@@ -1,0 +1,47 @@
+﻿@model AdExpress.Models.AssociationViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssociationViewModel</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StarDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StarDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDateTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AdTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NewspaperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewspaperName)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AddExpressWcfService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:37510/AdExpressWcfService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:37510/AdExpressWcfService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:37510/AdExpressWcfService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AdExpressServices.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdExpressWcfService_AddAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_AddAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_GetAllAdsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAdsList" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_GetAllAdsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAdsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_FindAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_FindAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_SaveAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_SaveAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_RemoveAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAd" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_RemoveAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_AddNewspaper_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewspaper" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_AddNewspaper_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewspaperResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_GetAllNewspapers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNewspapers" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_GetAllNewspapers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNewspapersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_FindNewspaper_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindNewspaper" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_FindNewspaper_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindNewspaperResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_SaveNewspaper_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveNewspaper" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_SaveNewspaper_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveNewspaperResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_RemoveNewspaper_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveNewspaper" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_RemoveNewspaper_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveNewspaperResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_AddAssociation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAssociation" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_AddAssociation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAssociationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_GetAllAssociations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssociations" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_GetAllAssociations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssociationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_FindAssociation_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAssociation" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_FindAssociation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAssociationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_SaveAssociation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAssociation" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_SaveAssociation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAssociationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_RemoveAssociation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAssociation" />
+  </wsdl:message>
+  <wsdl:message name="IAdExpressWcfService_RemoveAssociation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAssociationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdExpressWcfService">
+    <wsdl:operation name="AddAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/AddAd" message="tns:IAdExpressWcfService_AddAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/AddAdResponse" message="tns:IAdExpressWcfService_AddAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAdsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/GetAllAdsList" message="tns:IAdExpressWcfService_GetAllAdsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/GetAllAdsListResponse" message="tns:IAdExpressWcfService_GetAllAdsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/FindAd" message="tns:IAdExpressWcfService_FindAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/FindAdResponse" message="tns:IAdExpressWcfService_FindAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/SaveAd" message="tns:IAdExpressWcfService_SaveAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/SaveAdResponse" message="tns:IAdExpressWcfService_SaveAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/RemoveAd" message="tns:IAdExpressWcfService_RemoveAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/RemoveAdResponse" message="tns:IAdExpressWcfService_RemoveAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewspaper">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/AddNewspaper" message="tns:IAdExpressWcfService_AddNewspaper_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/AddNewspaperResponse" message="tns:IAdExpressWcfService_AddNewspaper_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNewspapers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/GetAllNewspapers" message="tns:IAdExpressWcfService_GetAllNewspapers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/GetAllNewspapersResponse" message="tns:IAdExpressWcfService_GetAllNewspapers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNewspaper">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/FindNewspaper" message="tns:IAdExpressWcfService_FindNewspaper_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/FindNewspaperResponse" message="tns:IAdExpressWcfService_FindNewspaper_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewspaper">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/SaveNewspaper" message="tns:IAdExpressWcfService_SaveNewspaper_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/SaveNewspaperResponse" message="tns:IAdExpressWcfService_SaveNewspaper_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNewspaper">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/RemoveNewspaper" message="tns:IAdExpressWcfService_RemoveNewspaper_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/RemoveNewspaperResponse" message="tns:IAdExpressWcfService_RemoveNewspaper_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAssociation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/AddAssociation" message="tns:IAdExpressWcfService_AddAssociation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/AddAssociationResponse" message="tns:IAdExpressWcfService_AddAssociation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAssociations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/GetAllAssociations" message="tns:IAdExpressWcfService_GetAllAssociations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/GetAllAssociationsResponse" message="tns:IAdExpressWcfService_GetAllAssociations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAssociation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/FindAssociation" message="tns:IAdExpressWcfService_FindAssociation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/FindAssociationResponse" message="tns:IAdExpressWcfService_FindAssociation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAssociation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/SaveAssociation" message="tns:IAdExpressWcfService_SaveAssociation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/SaveAssociationResponse" message="tns:IAdExpressWcfService_SaveAssociation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAssociation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdExpressWcfService/RemoveAssociation" message="tns:IAdExpressWcfService_RemoveAssociation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdExpressWcfService/RemoveAssociationResponse" message="tns:IAdExpressWcfService_RemoveAssociation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAdExpressWcfService" type="tns:IAdExpressWcfService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAd">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/AddAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAdsList">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/GetAllAdsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAd">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/FindAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAd">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/SaveAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAd">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/RemoveAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewspaper">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/AddNewspaper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNewspapers">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/GetAllNewspapers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNewspaper">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/FindNewspaper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewspaper">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/SaveNewspaper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNewspaper">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/RemoveNewspaper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAssociation">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/AddAssociation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAssociations">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/GetAllAssociations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAssociation">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/FindAssociation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAssociation">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/SaveAssociation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAssociation">
+      <soap:operation soapAction="http://tempuri.org/IAdExpressWcfService/RemoveAssociation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddExpressWcfService">
+    <wsdl:port name="BasicHttpBinding_IAdExpressWcfService" binding="tns:BasicHttpBinding_IAdExpressWcfService">
+      <soap:address location="http://localhost:37510/AdExpressWcfService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
