@@ -13,5 +13,11 @@ namespace AdExpress.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<AdExpress.Models.NewspaperViewModel> NewspaperViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<AdExpress.Models.AssociationViewModel> AssociationViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<AdExpress.AdExpressWcfService.Association> Associations { get; set; }
     }
 }

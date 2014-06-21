@@ -1,4 +1,4 @@
-﻿@model AdExpress.Models.Ad
+﻿@model AdExpress.Models.AdViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Ad</h4>
+        <h4>AdViewModel</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)

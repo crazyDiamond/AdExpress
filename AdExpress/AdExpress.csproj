@@ -39,10 +39,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\windows8\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -160,14 +165,24 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdController.cs" />
+    <Compile Include="Controllers\AssociationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewspaperController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Dropdownhelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Ad.cs" />
+    <Compile Include="Models\AdViewModel.cs" />
+    <Compile Include="Models\AssociationViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\NewspaperViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AdExpressWcfService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +206,22 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\AdExpressWcfService\AdExpress.AdExpressWcfService.Ad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AdExpressWcfService\AdExpress.AdExpressWcfService.Association.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AdExpressWcfService\AdExpress.AdExpressWcfService.Newspaper.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\AdExpressWcfService\AdExpressWcfService.disco" />
+    <None Include="Service References\AdExpressWcfService\configuration91.svcinfo" />
+    <None Include="Service References\AdExpressWcfService\configuration.svcinfo" />
+    <None Include="Service References\AdExpressWcfService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -221,6 +252,26 @@
     <Content Include="Views\Ad\Details.cshtml" />
     <Content Include="Views\Ad\Edit.cshtml" />
     <Content Include="Views\Ad\Index.cshtml" />
+    <None Include="Service References\AdExpressWcfService\AddExpressWcfService.wsdl" />
+    <None Include="Service References\AdExpressWcfService\AdExpressWcfService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AdExpressWcfService\AdExpressWcfService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AdExpressWcfService\AdExpressWcfService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Newspaper\Create.cshtml" />
+    <Content Include="Views\Newspaper\Delete.cshtml" />
+    <Content Include="Views\Newspaper\Details.cshtml" />
+    <Content Include="Views\Newspaper\Edit.cshtml" />
+    <Content Include="Views\Newspaper\Index.cshtml" />
+    <Content Include="Views\Association\Create.cshtml" />
+    <Content Include="Views\Association\Delete.cshtml" />
+    <Content Include="Views\Association\Details.cshtml" />
+    <Content Include="Views\Association\Edit.cshtml" />
+    <Content Include="Views\Association\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +282,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AdExpressWcfService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

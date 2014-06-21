@@ -1,22 +1,31 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Web.Mvc;
+using AdExpress.AdExpressWcfService;
 using AdExpress.Models;
+using AutoMapper;
 
 namespace AdExpress.Controllers
 {
     public class AdController : Controller
     {
-        private AdDBContext db = new AdDBContext();
+        private readonly AdExpressWcfServiceClient _service;
+
+        public AdController()
+        {
+            _service = new AdExpressWcfServiceClient();
+        }
 
         // GET: /Ads/
         public ActionResult Index()
         {
-            List<Ad> model = db.Ads.ToList();
-            return View(model);
+            //TODO : Does this method have to return a list?
+            var sources =  _service.GetAllAdsList();
+            var ads = Mapper.Map<Ad[], AdViewModel[]>(sources);
+           
+            return View(ads);
         }
+
+        
 
         // GET: /Ads/Details/5
         public ActionResult Details(int? id)
@@ -25,12 +34,13 @@ namespace AdExpress.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ad ad = db.Ads.Find(id);
+            Ad ad = _service.FindAd(id);
             if (ad == null)
             {
                 return HttpNotFound();
             }
-            return View(ad);
+            var advm = Mapper.Map<Ad, AdViewModel>(ad);
+            return View(advm);
         }
 
         // GET: /Ads/Create
@@ -44,47 +54,46 @@ namespace AdExpress.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,Title,Version")] Ad ad)
+        public ActionResult Create([Bind(Include="ID,Title,Version")] AdViewModel adViewModel)
         {
             if (ModelState.IsValid)
             {
-                db.Ads.Add(ad);
-                db.SaveChanges();
+                _service.AddAd(adViewModel.Title, adViewModel.Version);
                 return RedirectToAction("Index");
             }
 
-            return View(ad);
+            return View(adViewModel);
         }
 
         // GET: /Ads/Edit/5
-        public ActionResult Edit(int? id)
+     public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ad ad = db.Ads.Find(id);
-            if (ad == null)
+            AdViewModel adViewModel = Mapper.Map<Ad, AdViewModel>(_service.FindAd(id));
+            if (adViewModel == null)
             {
                 return HttpNotFound();
             }
-            return View(ad);
+            return View(adViewModel);
         }
 
         // POST: /Ads/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+       [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,Title,Version")] Ad ad)
+        public ActionResult Edit([Bind(Include="ID,Title,Version")] AdViewModel adViewModel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ad).State = EntityState.Modified;
-                db.SaveChanges();
+                Ad ad = Mapper.Map<AdViewModel, Ad>(adViewModel);
+                _service.SaveAd(ad);
                 return RedirectToAction("Index");
             }
-            return View(ad);
+            return View(adViewModel);
         }
 
         // GET: /Ads/Delete/5
@@ -94,32 +103,31 @@ namespace AdExpress.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ad ad = db.Ads.Find(id);
-            if (ad == null)
+            AdViewModel adViewModel = Mapper.Map<Ad, AdViewModel>(_service.FindAd(id));
+            if (adViewModel == null)
             {
                 return HttpNotFound();
             }
-            return View(ad);
+            return View(adViewModel);
         }
 
         // POST: /Ads/Delete/5
-        [HttpPost, ActionName("Delete")]
+       [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ad ad = db.Ads.Find(id);
-            db.Ads.Remove(ad);
-            db.SaveChanges();
+            _service.RemoveAd(_service.FindAd(id));
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //TODO: Do I need to dispose of the service object?
+        /* protected override void Dispose(bool disposing)
+         {
+             if (disposing)
+             {
+                 db.Dispose();
+             }
+             base.Dispose(disposing);
+         }*/
     }
 }

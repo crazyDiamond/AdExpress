@@ -15,8 +15,8 @@ namespace AdExpress
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-               name: "Ad",
-               url: "{controller}/{action}/{name}/{id}"
+               name: "AdViewModel",
+               url: "{controller}/{action}/{title}/{id}"
             );
         }
     }

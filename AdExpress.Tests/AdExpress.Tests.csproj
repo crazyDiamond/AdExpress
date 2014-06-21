@@ -93,7 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdControllerTest.cs" />
+    <Compile Include="Services\AdControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -104,9 +104,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdExpressService\AdExpressService.csproj">
-      <Project>{aa71db45-2e66-42b2-af41-394e281ae54d}</Project>
-      <Name>AdExpressService</Name>
+    <ProjectReference Include="..\AdExpressServices\AdExpressServices.csproj">
+      <Project>{6e04228c-37e6-4aaa-a46e-0f2807c28608}</Project>
+      <Name>AdExpressServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdExpress\AdExpress.csproj">
       <Project>{5f3fb424-298c-42d2-ab48-c09f7957aa77}</Project>
