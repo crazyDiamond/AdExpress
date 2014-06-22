@@ -32,9 +32,11 @@
   <xs:element name="ArrayOfNewspaper" nillable="true" type="tns:ArrayOfNewspaper" />
   <xs:complexType name="Association">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Ad" nillable="true" type="tns:Ad" />
       <xs:element minOccurs="0" name="AdId" type="xs:int" />
       <xs:element minOccurs="0" name="EndDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Newspaper" nillable="true" type="tns:Newspaper" />
       <xs:element minOccurs="0" name="NewspaperId" type="xs:int" />
       <xs:element minOccurs="0" name="StartDateTime" type="xs:dateTime" />
     </xs:sequence>

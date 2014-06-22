@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -125,19 +126,22 @@ namespace AdExpressServices
 
         public Association AddAssociation(DateTime startDateTime, DateTime endDateTime, int adID, int newspaperID)
         {
-            var ad = FindAd(adID);
-            var newspaper = FindNewspaper(newspaperID);
-            if (ad == null || newspaper == null)
-                return null;
             using (var context = new AdExpressDBContext())
             {
+                var ad = FindAd(adID);
+                var newspaper = FindNewspaper(newspaperID);
+                if (ad == null || newspaper == null)
+                    return null;
                 var association =
                     context.Associations.Add(new Association
                     {
                         AdId = adID,
                         StartDateTime = startDateTime,
                         EndDateTime = endDateTime,
-                        NewspaperId = newspaperID
+                        NewspaperId = newspaperID,
+                        Ad = ad,
+                        Newspaper = newspaper
+
                     });
                 context.SaveChanges();
                 return association;
@@ -146,12 +150,24 @@ namespace AdExpressServices
 
         public Association[] GetAllAssociations()
         {
+            var assoications = new List<Association>();
             using (var context = new AdExpressDBContext())
             {
-                var query = (from a in context.Associations
-                    orderby a.NewspaperId 
-                    select a).ToArray();
-                return query;
+                var query = (
+                    from a in context.Associations
+                    join b in context.Newspapers on a.NewspaperId equals b.ID
+                    join c in context.Ads on a.AdId equals c.ID
+                    orderby a.StartDateTime
+                    select new  {ID = a.ID, AdId = a.AdId, NewspaperId = a.NewspaperId, EndDateTime = a.EndDateTime, StartDateTime = a.StartDateTime, Newspaper = b, Ad= c}).ToArray();
+                foreach (var VARIABLE in query)
+                {
+                    assoications.Add(new Association
+                    {
+                        ID = VARIABLE.ID, Ad = VARIABLE.Ad, EndDateTime= VARIABLE.EndDateTime, AdId = VARIABLE.AdId, Newspaper = VARIABLE.Newspaper, NewspaperId = VARIABLE.NewspaperId, StartDateTime = VARIABLE.StartDateTime
+                    
+                    });
+                }
+                return assoications.ToArray();
             }
         }
 

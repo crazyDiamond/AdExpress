@@ -11,3 +11,16 @@ E:\Users\jeeva.nadarajah\My Documents\Visual Studio 2013\Projects\AdExpress\AdEx
 E:\Users\jeeva.nadarajah\My Documents\Visual Studio 2013\Projects\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.dll
 E:\Users\jeeva.nadarajah\My Documents\Visual Studio 2013\Projects\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.pdb
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.csprojResolveAssemblyReference.cache
+C:\CODE\AdExpress\AdExpressServices\bin\AutoMapper.Net4.dll
+C:\CODE\AdExpress\AdExpressServices\bin\AdExpressServices.dll.config
+C:\CODE\AdExpress\AdExpressServices\bin\AdExpressServices.dll
+C:\CODE\AdExpress\AdExpressServices\bin\AdExpressServices.pdb
+C:\CODE\AdExpress\AdExpressServices\bin\AutoMapper.dll
+C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.dll
+C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.SqlServer.dll
+C:\CODE\AdExpress\AdExpressServices\bin\AutoMapper.xml
+C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.xml
+C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.SqlServer.xml
+C:\CODE\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.csprojResolveAssemblyReference.cache
+C:\CODE\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.dll
+C:\CODE\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.pdb

@@ -50,3 +50,4 @@ e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdEx
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress.Tests\obj\Debug\AdExpress.Tests.dll
 e:\users\jeeva.nadarajah\my documents\visual studio 2013\Projects\AdExpress\AdExpress.Tests\obj\Debug\AdExpress.Tests.pdb
+C:\CODE\AdExpress\AdExpress.Tests\obj\Debug\AdExpress.Tests.csprojResolveAssemblyReference.cache

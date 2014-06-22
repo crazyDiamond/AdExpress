@@ -73,14 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdExpressWcfService.svc" />
-    <Content Include="App_Data\AdExpress.Models.AdDBContext.mdf" />
-    <Content Include="App_Data\AdExpress.Models.AdDBContext_log.ldf">
-      <DependentUpon>AdExpress.Models.AdDBContext.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Ads.mdf" />
-    <Content Include="App_Data\Ads_log.ldf">
-      <DependentUpon>Ads.mdf</DependentUpon>
-    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -97,7 +89,9 @@
     <Compile Include="Models\Newspaper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">

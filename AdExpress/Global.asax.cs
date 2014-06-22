@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Runtime.CompilerServices;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using AdExpress.AdExpressWcfService;
@@ -27,8 +28,14 @@ namespace AdExpress
             Mapper.CreateMap<AdViewModel, Ad>();
             Mapper.CreateMap<Newspaper, NewspaperViewModel>();
             Mapper.CreateMap<NewspaperViewModel, Newspaper>();
-            Mapper.CreateMap<Association, AssociationViewModel>();
-            Mapper.CreateMap<AssociationViewModel, Association>();
+            Mapper.CreateMap<Association, AssociationViewModel>()
+                .ForMember(x => x.AdTitle, opt => opt.MapFrom(src => src.Ad.Title))
+                .ForMember(x=>x.NewspaperName, opt => opt.MapFrom(src => src.Newspaper.Name))
+                .ForMember(x => x.ID, opt => opt.MapFrom(src => src.ID));
+            Mapper.CreateMap<AssociationViewModel, Association>(); /*
+                .ForMember(x => x.Ad.Title, opt => opt.MapFrom(src => src.AdTitle))
+                .ForMember(x => x.Newspaper.Name, opt => opt.MapFrom(src => src.NewspaperName))
+                .ForMember(x => x.ID, opt => opt.MapFrom(src => src.ID));*/
 
         }
     }

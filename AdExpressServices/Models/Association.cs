@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 
 namespace AdExpressServices.Models
 {
@@ -16,8 +15,5 @@ namespace AdExpressServices.Models
 
     }
 
-    /*public class AssociationDBContext : DbContext
-    {
-        public virtual DbSet<Association> Associations { get; set; }
-    }*/
+
 }
