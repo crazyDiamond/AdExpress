@@ -11,7 +11,7 @@ namespace AdExpress.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "This area will describe my thought process when working this excercise.";
 
             return View();
         }

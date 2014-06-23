@@ -1,7 +1,5 @@
 ﻿
 
-using System.Data.Entity;
-
 namespace AdExpressServices.Models
 {
     public class Ad 

@@ -91,7 +91,7 @@ namespace AdExpress.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,StarDateTime,EndDateTime")] AssociationViewModel associationviewmodel)
+        public ActionResult Edit([Bind(Include = "ID,StarDateTime,EndDateTime,AdId,NewspaperId")] AssociationViewModel associationviewmodel)
         {
             if (ModelState.IsValid)
             {

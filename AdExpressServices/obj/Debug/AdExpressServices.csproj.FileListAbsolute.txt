@@ -21,6 +21,5 @@ C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.SqlServer.dll
 C:\CODE\AdExpress\AdExpressServices\bin\AutoMapper.xml
 C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.xml
 C:\CODE\AdExpress\AdExpressServices\bin\EntityFramework.SqlServer.xml
-C:\CODE\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.csprojResolveAssemblyReference.cache
 C:\CODE\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.dll
 C:\CODE\AdExpress\AdExpressServices\obj\Debug\AdExpressServices.pdb

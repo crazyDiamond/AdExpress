@@ -10,23 +10,33 @@ namespace AdExpressServices
 {
     public class AddExpressWcfService : IAdExpressWcfService
     {
+        private readonly AdExpressDBContext _context;
+
+        public AddExpressWcfService()
+        {
+        }
+
+        public AddExpressWcfService(AdExpressDBContext adExpressDbContext)
+        {
+            _context = adExpressDbContext;
+        }
 
 
         public Ad AddAd(string title, string version)
         {
-            using (var context = new AdExpressDBContext())
+            using (_context ?? new AdExpressDBContext())
             {
-                var ad = context.Ads.Add(new Ad { Title = title, Version = version });
-                context.SaveChanges();
+                var ad = _context.Ads.Add(new Ad { Title = title, Version = version });
+                _context.SaveChanges();
                 return ad;
             }
         }
 
         public Ad[] GetAllAdsList()
         {
-            using (var context = new AdExpressDBContext())
+            using (_context ?? new AdExpressDBContext())
             {
-                var query = (from a in context.Ads
+                var query = (from a in _context.Ads
                     orderby a.Title
                     select a).ToArray();
 
@@ -70,19 +80,20 @@ namespace AdExpressServices
 
         public Newspaper AddNewspaper(string name, string category)
         {
-            using (var context = new AdExpressDBContext())
+            using (_context ?? new AdExpressDBContext())
             {
-                var newspaper = context.Newspapers.Add(new Newspaper {Name = name, Category = category});
-                context.SaveChanges();
-                return newspaper;
+               var newspaper = _context.Newspapers.Add(new Newspaper {Name = name, Category = category});
+                    _context.SaveChanges();
+                    return newspaper;
+                
             }
         }
 
         public Newspaper[] GetAllNewspapers()
         {
-            using (var context = new AdExpressDBContext())
+            using (_context)
             {
-                Newspaper[] query = (from a in context.Newspapers
+                Newspaper[] query = (from a in _context.Newspapers
                     orderby a.Name
                     select a).ToArray();
 

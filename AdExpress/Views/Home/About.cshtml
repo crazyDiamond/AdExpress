@@ -1,7 +1,17 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "The evolution of this Kata";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>This area will describe my thought process when working this project.</p>
+<br /> 1. I wanted to implement the repository pattern so I could test the data access layer and the presentation layer. 
+<br /> 2. The reasoning behind #1 is primarily TDD, however I wanted to use the most recent tools out there to experience the difference. Promoted ease of coding and style. So began coding using .Net4.5 and MVC5.
+<br />3. Decided to go with SqlClient, the slimmest most portable form of SqlServerDB for ease of sharing.
+<br />4. Previously I've had n+1 issues with Entity Framework which was why choosing it over nhibernate was a little difficult. EF6.0 is used here as a coding experiment. It allowed for code first style of Database wiring and POCO. 
+<br />5. With Scaffolding in place it was relatively easy to introduce the 3 basic classes, "Ad", "Newspaper" and "Association", associated MVC classes and their specific DBContexts.
+<br />6. Day 2 was spent refactoring and creating the service methods. I was still not writing any tests.
+<br />7. Day 3 was adding tests for the service. I would like not to hit the database but instead create a mock dbcontext and perform in-memory testing.
+<br />8. Would also like to put in basic controller testing for the website.
+
+
